@@ -14,7 +14,7 @@ const searchIndices = [
 const Header = ({ site }) => (
   <HeaderContainer>
     <Logo to="/" title={site.title} rel="home">
-      JR
+      Lai
     </Logo>
     <Nav />
     <Social collapse short linkStyle={navLinkStyle} />

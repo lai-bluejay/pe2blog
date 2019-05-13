@@ -5,10 +5,10 @@ require(`dotenv`).config()
 
 module.exports = {
   siteMetadata: {
-    title: `janosh.io`,
+    title: `peace-eve`,
     description: `Physics, machine learning, sustainability and web development.`,
     author: `Janosh Riebesell`,
-    siteUrl: `https://janosh.io`,
+    siteUrl: `https://p2.jithub.cn`,
   },
   plugins: [
     `gatsby-transformer-sharp`,
