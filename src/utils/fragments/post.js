@@ -17,6 +17,7 @@ export const query = graphql`
       value
       depth
     }
+    tableOfContents
     html
   }
 `

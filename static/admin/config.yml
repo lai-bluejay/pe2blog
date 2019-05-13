@@ -36,6 +36,19 @@ collections:
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - label: "Cover" 
+        name: "cover"
+        widget: "object"
+        fields: 
+          - label: "Img"
+            name: "img"
+            widget: "image"
+            default: "/uploads/chocolate-dogecoin.jpg"
+            media_library:
+              config:
+                multiple: true
+          - {label: "Credit", name: "credit", widget: "string"}
+          - {label: "Url", name: "url", widget: "string"}
 
   - name: "pages"
     label: "Pages"

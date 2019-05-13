@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { useClickOutside } from '../../utils/hooks'
 import { TocDiv, TocLink, TocIcon, Title, Toggle } from './styles'
 
-export default function Toc({ headings, title = `Contents` }) {
+export default function Toc({ headings, title = `Contents`, slug }) {
   const [open, setOpen] = useState(false)
   const minDepth = Math.min(...headings.map(({ depth }) => depth))
   const ref = useRef()
@@ -18,11 +18,11 @@ export default function Toc({ headings, title = `Contents` }) {
           <Toggle closer onClick={() => setOpen(false)} />
         </Title>
         <nav open={open}>
-          {headings.map(({ value, depth, slug }) => (
+          {headings.map(({ value, depth}) => (
             <TocLink
               key={value}
               depth={depth - minDepth}
-              to={slug}
+              to={ '/blog' + slug + '/#'+ value}
               onClick={() => setOpen(false)}
             >
               {value}

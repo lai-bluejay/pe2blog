@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     title: `peace-eve`,
     description: `Physics, machine learning, sustainability and web development.`,
-    author: `Janosh Riebesell`,
+    author: `Charles Lai`,
     siteUrl: `https://p2.jithub.cn`,
   },
   plugins: [

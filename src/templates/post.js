@@ -37,7 +37,7 @@ const PostTemplate = ({ data, location }) => {
         <PostMeta inTitle {...meta} />
       </PageTitle>
       <PageBody>
-        {showToc && <Toc {...{ headings, toc }} />}
+        {showToc && <Toc {...{ headings, toc, slug }} />}
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <DiscussionEmbed {...disqusConfig({ slug, title })} />
         <PrevNext
