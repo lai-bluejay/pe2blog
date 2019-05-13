@@ -1,22 +1,35 @@
-// @flow
-import React from 'react';
-import type { Entry, WidgetFor } from '../../types';
+import React from "react"
+import { graphql } from "gatsby"
 
-type Props = {
-  entry: Entry,
-  widgetFor: WidgetFor
-};
+import Global from "../../components/Global"
+import PageTitle from "../../components/PageTitle"
+import { PageBody } from "../../components/styles"
 
-const PagePreview = ({ entry, widgetFor }: Props) => {
-  const body = widgetFor('body');
-  const title = entry.getIn(['data', 'title']);
-
+const PageTemplate = ({ data, location }) => {
+  const { frontmatter, html, excerpt } = data.page
+  const { title, cover } = frontmatter
+  if (cover) cover.fluid = cover.img.sharp.fluid
   return (
-    <div className="page">
-      <h1 className="page__title">{title}</h1>
-      <div className="page__body">{ body }</div>
-    </div>
-  );
-};
+    <Global pageTitle={title} path={location.pathname} description={excerpt}>
+      <PageTitle img={cover}>
+        <h1>{title}</h1>
+      </PageTitle>
+      <PageBody dangerouslySetInnerHTML={{ __html: html }} />
+    </Global>
+  )
+}
 
-export default PagePreview;
+export default PageTemplate
+
+export const query = graphql`
+  query($slug: String!) {
+    page: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        ...cover
+      }
+      html
+      excerpt
+    }
+  }
+`
