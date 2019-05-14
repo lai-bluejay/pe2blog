@@ -39,16 +39,19 @@ collections:
       - label: "Cover" 
         name: "cover"
         widget: "object"
+        required: false
         fields: 
           - label: "Img"
             name: "img"
             widget: "image"
             default: "/uploads/chocolate-dogecoin.jpg"
+            required: false
             media_library:
               config:
                 multiple: true
-          - {label: "Credit", name: "credit", widget: "string"}
-          - {label: "Url", name: "url", widget: "string"}
+          - {label: "Credit", name: "credit", widget: "string", default: "CharlesLai", required: false}
+          - {label: "Url", name: "url", widget: "string", required: false, hint: "url for credit"}
+      - {label: "ShowToc", name: "showToc", widget: "boolean", default: true}
 
   - name: "pages"
     label: "Pages"
