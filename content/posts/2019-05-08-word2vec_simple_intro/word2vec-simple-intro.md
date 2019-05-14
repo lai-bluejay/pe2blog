@@ -3,9 +3,7 @@ title: 通俗易懂的Word2vec简介
 subtitle: A Conceptual Introduction
 slug: /2019-05-08-simple-word2vec-intro
 cover:
-  img: grand-canyon.jpg
-  credit: Free-Photos
-  url: https://pixabay.com/photos/grand-canyon-scenery-landscape-1246248
+  img: ../../photos/tanzania-elephants-mother-child.jpg
 tags:
   - word2vec
   - 词嵌入
